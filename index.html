@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 60px;
+        }
+
+        .menu button, .socials a {
+            background-color: #1db954;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .menu button:hover, .socials a:hover {
+            transform: scale(1.1);
+        }
+
+        .player {
+            margin-top: 30px;
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .settings {
+            margin-top: 30px;
+        }
+
+        select {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .socials {
+            margin-top: 20px;
+        }
+
+        .info {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            display: none; /* Initially hidden */
+        }
+
+        /* Мобильная версия */
+        @media (max-width: 768px) {
+            .logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .menu button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            .player {
+                padding: 15px;
+            }
+
+            .settings {
+                font-size: 14px;
+            }
+        }
+
+        /* Версия для ПК */
+        @media (min-width: 769px) {
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .menu button {
+                font-size: 18px;
+                padding: 12px 24px;
+            }
+
+            .player {
+                padding: 25px;
+            }
+
+            .settings {
+                font-size: 18px;
+            }
+        }
+
+        /* Версия для устройств с экраном большего размера */
+        @media (min-width: 1024px) {
+            .menu {
+                gap: 15px;
+            }
+
+            .player {
+                margin-top: 50px;
+            }
+        }
+
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .modal-content {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+        }
+
+        .close-modal {
+            color: white;
+            font-size: 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+  <!-- Лого -->
+  <img src="7297B429-66D2-4D3C-9465-189CDACE3D00.png" alt="Logo" class="logo">
+
+  <!-- Меню -->
+  <div class="menu">
+      <button onclick="showModal('Дата концертів буде додано пізніше')">Дата концертів</button>
+      <button onclick="showModal('Магазин скоро відкриється')">Магазин</button>
+      <button onclick="showModal('Перелік релізів буде оновлено')">Релізи</button>
+      <button onclick="showModal('Контакти: ubijcklub ubijcklub@gemail.com')">Контакти</button>
+      <button onclick="showModal('Наші пісні: список пісень тут')">Наші пісні</button>
+      <button onclick="showModal('Ваш профіль ще в розробці')">Профіль</button>
+      <button onclick="showModal('Техпідтримка: ubijcklub@gmail.com')">Техпідтримка</button>
+      <button onclick="showModal('Купівля квитків буде доступна незабаром')">Купити квитки</button>
+      <button onclick="showModal('Додаток поки не доступний')">Додаток</button>
+      <button onclick="showInfo()">Інформація</button>
+  </div>
+
+  <!-- Музичний плеєр -->
+  <div class="player">
+      <h2>Музичний плеєр</h2>
+      <select id="trackSelector">
+          <option value="спокойный вечерний плейлист #2 2.mp3">Спокійний вечірній плейлист #2</option>
+          <option value="портреты (Acoustic) 2.mp3">Портрети (Acoustic)</option>
+          <option value="playlist for sleep⧸⧸спокойный плейлист 2.mp3">Плейлист для сну</option>
+          <option value="спокойный вечерний плейлист #5 2.mp3">Спокійний вечірній плейлист #5</option>
+      </select>
+      <br>
+      <audio id="audioPlayer" controls>
+          <source src="спокойный вечерний плейлист #2 2.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+      </audio>
+  </div>
+
+  <!-- Модальні вікна -->
+  <div id="modal" class="modal">
+      <div class="modal-content">
+          <p id="modalText"></p>
+          <span class="close-modal" onclick="closeModal()">Закрити</span>
+      </div>
+  </div>
+
+  <!-- Інформація про нас -->
+  <div id="info" class="info">
+      <h3>Інформація про нас</h3>
+      <p>Це музична платформа, на якій ви можете знайти наші пісні, інформацію про концерти та новини з світу музики!</p>
+      <p>Ми працюємо над створенням нових релізів, а також забезпечуємо своїм фанатам найкращий досвід.</p>
+  </div>
+
+  <script>
+    // Зміна треку у плеєрі
+    document.getElementById("trackSelector").addEventListener("change", function() {
+          let audio = document.getElementById("audioPlayer");
+          audio.src = this.value;
+          audio.play();
+    })
+  </script>
+</body>
+</html>
