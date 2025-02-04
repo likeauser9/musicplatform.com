@@ -22,6 +22,39 @@
             height: 50px;
         }
 
+        /* Гамбургер-меню */
+        .hamburger {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            margin: 6px auto;
+            transition: 0.3s;
+        }
+
+        /* Мобильное меню */
+        .mobile-menu {
+            position: fixed;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            background-color: rgba(30, 30, 30, 0.95);
+            padding: 20px 0;
+            text-align: center;
+            transition: bottom 0.4s ease-in-out;
+            border-radius: 20px 20px 0 0;
+        }
+
         .menu {
             display: flex;
             flex-wrap: wrap;
@@ -168,6 +201,12 @@
   <!-- Лого -->
   <img src="7297B429-66D2-4D3C-9465-189CDACE3D00.png" alt="Logo" class="logo">
 
+  <button class="hamburger" onclick="toggleMobileMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </button>
+
   <!-- Меню -->
   <div class="menu">
       <button onclick="showModal('Дата концертів буде додано пізніше')">Дата концертів</button>
@@ -175,15 +214,22 @@
       <button onclick="showModal('Перелік релізів буде оновлено')">Релізи</button>
       <button onclick="showModal('Контакти: ubijcklub ubijcklub@gemail.com')">Контакти</button>
       <button onclick="showModal('Наші пісні: список пісень тут')">Наші пісні</button>
-      <button onclick="showModal('Ваш профіль ще в розробці')">Профіль</button>
+      <button onclick="window.location.href='login.html'">Профіль</button>
       <button onclick="showModal('Техпідтримка: ubijcklub@gmail.com')">Техпідтримка</button>
       <button onclick="showModal('Купівля квитків буде доступна незабаром')">Купити квитки</button>
       <button onclick="showModal('Додаток поки не доступний')">Додаток</button>
       <button onclick="showInfo()">Інформація</button>
   </div>
 
+  <div id="mobileMenu" class="mobile-menu">
+    <button onclick="showModal('Дата концертів буде додано пізніше')">Дата концертів</button>
+    <button onclick="showModal('Магазин скоро відкриється')">Магазин</button>
+    <button onclick="showModal('Перелік релізів буде оновлено')">Релізи</button>
+    <button onclick="showModal('Контакти: ubijcklub ubijcklub@gemail.com')">Контакти</button>
+  </div>
+
   <!-- Музичний плеєр -->
-  <div class="player">
+  <!-- <div class="player">
       <h2>Музичний плеєр</h2>
       <select id="trackSelector">
           <option value="спокойный вечерний плейлист #2 2.mp3">Спокійний вечірній плейлист #2</option>
@@ -196,7 +242,7 @@
           <source src="спокойный вечерний плейлист #2 2.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
       </audio>
-  </div>
+  </div> -->
 
   <!-- Модальні вікна -->
   <div id="modal" class="modal">
@@ -220,6 +266,10 @@
           audio.src = this.value;
           audio.play();
     })
+    function toggleMobileMenu() {
+        let menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("show");
+    }
   </script>
 </body>
 </html>
