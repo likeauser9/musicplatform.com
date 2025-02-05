@@ -5,28 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Music Platform</title>
     <link rel="stylesheet" href="index.css" />
-    <style></style>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <nav>
-      <a href="#" class="logo">Logo</a>
+    <header>
+      <a href="#" class="logo">Assassination Squad</a>
 
-      <ul class="nav_menu">
-        <li><a href="#" data-key="concerts_data">Дата концертів</a></li>
-        <li><a href="#" data-key="shop">Магазин</a></li>
-        <li><a href="#">Релізи</a></li>
-        <li><a href="#">Контакти</a></li>
-        <li><a href="#">Наші пісні</a></li>
-        <li><a href="#">Релізи</a></li>
-        <li><a href="#">Релізи</a></li>
+      <a href="#" class="header_button">Купити квитки</a>
+    </header>
+    <nav>
+      <ul class="nav_menu" id="menu_list">
+        <li>
+          <a class="dedicated_button" href="#" data-key="home">Головна</a>
+        </li>
+        <li><a href="#" data-key="tickets">Квитки</a></li>
+        <li><a href="#" data-key="releases">Релізи</a></li>
+        <li><a href="#" data-key="info">Інформація</a></li>
+        <li><a href="#" data-key="our_songs">Наші пісні</a></li>
       </ul>
 
-      <div class="hamburger">
+      <div class="hamburger" onclick="toggle_menu()">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </div>
-      <!-- <a href="#" class="header_button">Button</a> -->
+
+      <i class="fa-solid fa-magnifying-glass"></i>
     </nav>
     <!-- Лого -->
     <!-- <img src="7297B429-66D2-4D3C-9465-189CDACE3D00.png" alt="Logo" class="logo"> -->
@@ -35,31 +42,35 @@
     <div class="menu">
       <button onclick="alert('Дата концертів буде додано пізніше')">
         <img src="assets/icons/time.svg" alt="" />
-        Дата концертів
+        <span data-key="concerts_date">Дата концертів</span>
       </button>
-      <button onclick="showModal('Магазин скоро відкриється')">
+      <button onclick="showModal('Магазин скоро відкриється')" , data-key="">
         <img src="assets/icons/shop.svg" alt="" />
-        Магазин
+        <span data-key="shop">Магазин</span>
       </button>
       <button onclick="showModal('Перелік релізів буде оновлено')">
         <img src="assets/icons/song.svg" alt="" />
-        Релізи
+        <span data-key="releases">Релізи</span>
       </button>
       <button onclick="showModal('Контакти: ubijcklub ubijcklub@gemail.com')">
-        Контакти
+        <span data-key="contacts">Контакти</span>
       </button>
       <button onclick="showModal('Наші пісні: список пісень тут')">
-        Наші пісні
+        <span data-key="our_songs">Наші пісні</span>
       </button>
       <button onclick="window.location.href='login.html'">Профіль</button>
       <button onclick="showModal('Техпідтримка: ubijcklub@gmail.com')">
-        Техпідтримка
+        <span data-key="support">Техпідтримка</span>
       </button>
       <button onclick="showModal('Купівля квитків буде доступна незабаром')">
-        Купити квитки
+        <span data-key="buy_tickets">Купити квитки</span>
       </button>
-      <button onclick="showModal('Додаток поки не доступний')">Додаток</button>
-      <button onclick="showInfo()">Інформація</button>
+      <button onclick="showModal('Додаток поки не доступний')">
+        <span data-key="app">Додаток</span>
+      </button>
+      <button onclick="showInfo()">
+        <span data-key="info">Інформація</span>
+      </button>
     </div>
 
     <div id="mobileMenu" class="mobile-menu">
@@ -75,23 +86,6 @@
       </button>
     </div>
 
-    <!-- Музичний плеєр -->
-    <!-- <div class="player">
-      <h2>Музичний плеєр</h2>
-      <select id="trackSelector">
-          <option value="спокойный вечерний плейлист #2 2.mp3">Спокійний вечірній плейлист #2</option>
-          <option value="портреты (Acoustic) 2.mp3">Портрети (Acoustic)</option>
-          <option value="playlist for sleep⧸⧸спокойный плейлист 2.mp3">Плейлист для сну</option>
-          <option value="спокойный вечерний плейлист #5 2.mp3">Спокійний вечірній плейлист #5</option>
-      </select>
-      <br>
-      <audio id="audioPlayer" controls>
-          <source src="спокойный вечерний плейлист #2 2.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-      </audio>
-  </div> -->
-
-    <!-- Модальні вікна -->
     <div id="modal" class="modal">
       <div class="modal-content">
         <p id="modalText"></p>
@@ -99,7 +93,6 @@
       </div>
     </div>
 
-    <!-- Інформація про нас -->
     <div id="info" class="info">
       <h3>Інформація про нас</h3>
       <p>
@@ -111,8 +104,6 @@
         фанатам найкращий досвід.
       </p>
     </div>
-
-    <!-- Список мов -->
 
     <section class="middle">
       <label for="language">Оберіть мову:</label>
@@ -138,7 +129,6 @@
 
       <br /><br />
 
-      <!-- Список країн -->
       <label for="country">Оберіть країну:</label>
       <select id="country">
         <option value="ua">Україна (UA)</option>
@@ -164,5 +154,9 @@
 
     <script src="locales_changer.js"></script>
     <script src="index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/8bdf8c69c6.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

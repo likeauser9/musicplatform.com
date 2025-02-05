@@ -1,4 +1,13 @@
 {
-  "concerts_data": "Date of concerts",
-  "shop": "Shop"
+  "home": "Home",
+  "tickets": "Tickets",
+  "concerts_date": "Date of concerts",
+  "shop": "Shop",
+  "releases": "Releases",
+  "contacts": "Contacts",
+  "our_songs": "Our songs",
+  "support": "Support",
+  "buy_tickets": "Buy tickets",
+  "app": "App",
+  "info": "Info"
 }
