@@ -1,235 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Music Platform</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: white;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
+    <link rel="stylesheet" href="index.css" />
+    <style></style>
+  </head>
+  <body>
+    <nav>
+      <a href="#" class="logo">Logo</a>
 
-        .logo {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 50px;
-            height: 50px;
-        }
+      <ul class="nav_menu">
+        <li><a href="#" data-key="concerts_data">Дата концертів</a></li>
+        <li><a href="#" data-key="shop">Магазин</a></li>
+        <li><a href="#">Релізи</a></li>
+        <li><a href="#">Контакти</a></li>
+        <li><a href="#">Наші пісні</a></li>
+        <li><a href="#">Релізи</a></li>
+        <li><a href="#">Релізи</a></li>
+      </ul>
 
-        /* Гамбургер-меню */
-        .hamburger {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 40px;
-            height: 40px;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <!-- <a href="#" class="header_button">Button</a> -->
+    </nav>
+    <!-- Лого -->
+    <!-- <img src="7297B429-66D2-4D3C-9465-189CDACE3D00.png" alt="Logo" class="logo"> -->
 
-        .hamburger div {
-            width: 30px;
-            height: 4px;
-            background-color: white;
-            margin: 6px auto;
-            transition: 0.3s;
-        }
-
-        /* Мобильное меню */
-        .mobile-menu {
-            position: fixed;
-            bottom: -100%;
-            left: 0;
-            width: 100%;
-            background-color: rgba(30, 30, 30, 0.95);
-            padding: 20px 0;
-            text-align: center;
-            transition: bottom 0.4s ease-in-out;
-            border-radius: 20px 20px 0 0;
-        }
-
-        .menu {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 60px;
-        }
-
-        .menu button, .socials a {
-            background-color: #1db954;
-            border: none;
-            padding: 10px 20px;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            transition: transform 0.2s ease-in-out;
-        }
-
-        .menu button:hover, .socials a:hover {
-            transform: scale(1.1);
-        }
-
-        .player {
-            margin-top: 30px;
-            background: #222;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        audio {
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .settings {
-            margin-top: 30px;
-        }
-
-        select {
-            padding: 5px;
-            font-size: 16px;
-        }
-
-        .socials {
-            margin-top: 20px;
-        }
-
-        .info {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 10px;
-            display: none; /* Initially hidden */
-        }
-
-        /* Мобильная версия */
-        @media (max-width: 768px) {
-            .logo {
-                width: 40px;
-                height: 40px;
-            }
-
-            .menu button {
-                font-size: 14px;
-                padding: 8px 16px;
-            }
-
-            .player {
-                padding: 15px;
-            }
-
-            .settings {
-                font-size: 14px;
-            }
-        }
-
-        /* Версия для ПК */
-        @media (min-width: 769px) {
-            .logo {
-                width: 60px;
-                height: 60px;
-            }
-
-            .menu button {
-                font-size: 18px;
-                padding: 12px 24px;
-            }
-
-            .player {
-                padding: 25px;
-            }
-
-            .settings {
-                font-size: 18px;
-            }
-        }
-
-        /* Версия для устройств с экраном большего размера */
-        @media (min-width: 1024px) {
-            .menu {
-                gap: 15px;
-            }
-
-            .player {
-                margin-top: 50px;
-            }
-        }
-
-        /* Модальное окно */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .modal-content {
-            background-color: #333;
-            padding: 20px;
-            border-radius: 10px;
-            color: white;
-            font-size: 18px;
-        }
-
-        .close-modal {
-            color: white;
-            font-size: 20px;
-            margin-top: 10px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-  <!-- Лого -->
-  <!-- <img src="7297B429-66D2-4D3C-9465-189CDACE3D00.png" alt="Logo" class="logo"> -->
-
-  <button class="hamburger" onclick="toggleMobileMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </button>
-
-  <!-- Меню -->
-  <div class="menu">
-      <button onclick="showModal('Дата концертів буде додано пізніше')">Дата концертів</button>
-      <button onclick="showModal('Магазин скоро відкриється')">Магазин</button>
-      <button onclick="showModal('Перелік релізів буде оновлено')">Релізи</button>
-      <button onclick="showModal('Контакти: ubijcklub ubijcklub@gemail.com')">Контакти</button>
-      <button onclick="showModal('Наші пісні: список пісень тут')">Наші пісні</button>
+    <!-- Меню -->
+    <div class="menu">
+      <button onclick="alert('Дата концертів буде додано пізніше')">
+        <img src="assets/icons/time.svg" alt="" />
+        Дата концертів
+      </button>
+      <button onclick="showModal('Магазин скоро відкриється')">
+        <img src="assets/icons/shop.svg" alt="" />
+        Магазин
+      </button>
+      <button onclick="showModal('Перелік релізів буде оновлено')">
+        <img src="assets/icons/song.svg" alt="" />
+        Релізи
+      </button>
+      <button onclick="showModal('Контакти: ubijcklub ubijcklub@gemail.com')">
+        Контакти
+      </button>
+      <button onclick="showModal('Наші пісні: список пісень тут')">
+        Наші пісні
+      </button>
       <button onclick="window.location.href='login.html'">Профіль</button>
-      <button onclick="showModal('Техпідтримка: ubijcklub@gmail.com')">Техпідтримка</button>
-      <button onclick="showModal('Купівля квитків буде доступна незабаром')">Купити квитки</button>
+      <button onclick="showModal('Техпідтримка: ubijcklub@gmail.com')">
+        Техпідтримка
+      </button>
+      <button onclick="showModal('Купівля квитків буде доступна незабаром')">
+        Купити квитки
+      </button>
       <button onclick="showModal('Додаток поки не доступний')">Додаток</button>
       <button onclick="showInfo()">Інформація</button>
-  </div>
+    </div>
 
-  <div id="mobileMenu" class="mobile-menu">
-    <button onclick="showModal('Дата концертів буде додано пізніше')">Дата концертів</button>
-    <button onclick="showModal('Магазин скоро відкриється')">Магазин</button>
-    <button onclick="showModal('Перелік релізів буде оновлено')">Релізи</button>
-    <button onclick="showModal('Контакти: ubijcklub ubijcklub@gemail.com')">Контакти</button>
-  </div>
+    <div id="mobileMenu" class="mobile-menu">
+      <button onclick="showModal('Дата концертів буде додано пізніше')">
+        Дата концертів
+      </button>
+      <button onclick="showModal('Магазин скоро відкриється')">Магазин</button>
+      <button onclick="showModal('Перелік релізів буде оновлено')">
+        Релізи
+      </button>
+      <button onclick="showModal('Контакти: ubijcklub ubijcklub@gemail.com')">
+        Контакти
+      </button>
+    </div>
 
-  <!-- Музичний плеєр -->
-  <!-- <div class="player">
+    <!-- Музичний плеєр -->
+    <!-- <div class="player">
       <h2>Музичний плеєр</h2>
       <select id="trackSelector">
           <option value="спокойный вечерний плейлист #2 2.mp3">Спокійний вечірній плейлист #2</option>
@@ -244,82 +91,78 @@
       </audio>
   </div> -->
 
-  <!-- Модальні вікна -->
-  <div id="modal" class="modal">
+    <!-- Модальні вікна -->
+    <div id="modal" class="modal">
       <div class="modal-content">
-          <p id="modalText"></p>
-          <span class="close-modal" onclick="closeModal()">Закрити</span>
+        <p id="modalText"></p>
+        <span class="close-modal" onclick="closeModal()">Закрити</span>
       </div>
-  </div>
+    </div>
 
-  <!-- Інформація про нас -->
-  <div id="info" class="info">
+    <!-- Інформація про нас -->
+    <div id="info" class="info">
       <h3>Інформація про нас</h3>
-      <p>Це музична платформа, на якій ви можете знайти наші пісні, інформацію про концерти та новини з світу музики!</p>
-      <p>Ми працюємо над створенням нових релізів, а також забезпечуємо своїм фанатам найкращий досвід.</p>
-  </div>
+      <p>
+        Це музична платформа, на якій ви можете знайти наші пісні, інформацію
+        про концерти та новини з світу музики!
+      </p>
+      <p>
+        Ми працюємо над створенням нових релізів, а також забезпечуємо своїм
+        фанатам найкращий досвід.
+      </p>
+    </div>
 
-  <!-- Список мов -->
+    <!-- Список мов -->
 
-  <section>
-    <label for="language">Оберіть мову:</label>
-<select id="language">
-<option value="uk">Українська (UA)</option>
-<option value="en">Англійська (English, en)</option>
-<option value="ru">Російська (Русский, ru)</option>
-<option value="fr">Французька (Français, fr)</option>
-<option value="de">Німецька (Deutsch, de)</option>
-<option value="pl">Польська (Polski, pl)</option>
-<option value="ro">Молдовська / Румунська (Română, ro)</option>
-<option value="pt">Португальська (Português, pt)</option>
-<option value="tr">Турецька (Türkçe, tr)</option>
-<option value="ja">Японська (日本語, ja)</option>
-<option value="ko">Корейська (한국어, ko)</option>
-<option value="ar">Арабська (العربية, ar)</option>
-<option value="hi">Гінді (हिन्दी, hi)</option>
-<option value="sv">Шведська (Svenska, sv)</option>
-<option value="no">Норвезька (Norsk, no)</option>
-<option value="fi">Фінська (Suomi, fi)</option>
-<option value="el">Грецька (Ελληνικά, el)</option>
-</select>
+    <section class="middle">
+      <label for="language">Оберіть мову:</label>
+      <select id="language">
+        <option value="ua">Українська (UA)</option>
+        <option value="en">Англійська (English, en)</option>
+        <option value="ru">Російська (Русский, ru)</option>
+        <option value="fr">Французька (Français, fr)</option>
+        <option value="de">Німецька (Deutsch, de)</option>
+        <option value="pl">Польська (Polski, pl)</option>
+        <option value="ro">Молдовська / Румунська (Română, ro)</option>
+        <option value="pt">Португальська (Português, pt)</option>
+        <option value="tr">Турецька (Türkçe, tr)</option>
+        <option value="ja">Японська (日本語, ja)</option>
+        <option value="ko">Корейська (한국어, ko)</option>
+        <option value="ar">Арабська (العربية, ar)</option>
+        <option value="hi">Гінді (हिन्दी, hi)</option>
+        <option value="sv">Шведська (Svenska, sv)</option>
+        <option value="no">Норвезька (Norsk, no)</option>
+        <option value="fi">Фінська (Suomi, fi)</option>
+        <option value="el">Грецька (Ελληνικά, el)</option>
+      </select>
 
-<br><br>
+      <br /><br />
 
-<!-- Список країн -->
-<label for="country">Оберіть країну:</label>
-<select id="country">
-<option value="ua">Україна (UA)</option>
-<option value="us">США (US)</option>
-<option value="de">Німеччина (DE)</option>
-<option value="fr">Франція (FR)</option>
-<option value="gb">Велика Британія (GB)</option>
-<option value="pl">Польща (PL)</option>
-  <option value="md">Молдова (MD)</option>
-  <option value="ru">Росія (RU)</option>
-  <option value="pt">Португалія (PT)</option>
-  <option value="tr">Туреччина (TR)</option>
-  <option value="jp">Японія (JP)</option>
-  <option value="kr">Південна Корея (KR)</option>
-  <option value="ae">ОАЕ (AE)</option>
-  <option value="in">Індія (IN)</option>
-  <option value="se">Швеція (SE)</option>
-  <option value="no">Норвегія (NO)</option>
-  <option value="fi">Фінляндія (FI)</option>
-  <option value="gr">Греція (GR)</option>
-  </select>
-  </section>
+      <!-- Список країн -->
+      <label for="country">Оберіть країну:</label>
+      <select id="country">
+        <option value="ua">Україна (UA)</option>
+        <option value="us">США (US)</option>
+        <option value="de">Німеччина (DE)</option>
+        <option value="fr">Франція (FR)</option>
+        <option value="gb">Велика Британія (GB)</option>
+        <option value="pl">Польща (PL)</option>
+        <option value="md">Молдова (MD)</option>
+        <option value="ru">Росія (RU)</option>
+        <option value="pt">Португалія (PT)</option>
+        <option value="tr">Туреччина (TR)</option>
+        <option value="jp">Японія (JP)</option>
+        <option value="kr">Південна Корея (KR)</option>
+        <option value="ae">ОАЕ (AE)</option>
+        <option value="in">Індія (IN)</option>
+        <option value="se">Швеція (SE)</option>
+        <option value="no">Норвегія (NO)</option>
+        <option value="fi">Фінляндія (FI)</option>
+        <option value="gr">Греція (GR)</option>
+      </select>
+    </section>
 
-  <script>
-    // Зміна треку у плеєрі
-    document.getElementById("trackSelector").addEventListener("change", function() {
-          let audio = document.getElementById("audioPlayer");
-          audio.src = this.value;
-          audio.play();
-    })
-    function toggleMobileMenu() {
-        let menu = document.getElementById("mobileMenu");
-        menu.classList.toggle("show");
-    }
-  </script>
-</body>
+    <script src="locales_changer.js"></script>
+    <script src="index.js"></script>
+  </body>
 </html>

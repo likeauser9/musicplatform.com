@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: white;
+  text-align: center;
+}
+
+/* .logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+} */
+
+/* Гамбургер-меню */
+/* .hamburger {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  margin: 6px auto;
+  transition: 0.3s;
+} */
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+/* Мобильное меню */
+.mobile-menu {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background-color: rgba(30, 30, 30, 0.95);
+  padding: 20px 0;
+  text-align: center;
+  transition: bottom 0.4s ease-in-out;
+  border-radius: 20px 20px 0 0;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 60px;
+}
+
+.menu button,
+.socials a {
+  background-color: #1db954;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+}
+
+.menu button img {
+  vertical-align: middle;
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+}
+
+.menu button:hover,
+.socials a:hover {
+  transform: scale(1.1);
+}
+
+.player {
+  margin-top: 30px;
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+audio {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.settings {
+  margin-top: 30px;
+}
+
+select {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.socials {
+  margin-top: 20px;
+}
+
+.info {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  display: none; /* Initially hidden */
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .menu button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .player {
+    padding: 15px;
+  }
+
+  .settings {
+    font-size: 14px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav_menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #121212;
+    border: 2px solid red;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav_menu li {
+    margin: 16px 0;
+  }
+
+  .nav_menu.active {
+    left: 0;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.modal-content {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+}
+
+.close-modal {
+  color: white;
+  font-size: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* header */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: #ff4d4d;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.nav_menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav_menu li a {
+  color: white;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.nav_menu li a:hover {
+  color: #ffe066;
+}
+
+.header_button {
+  background: white;
+  color: #ff4d4d;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.header_button:hover {
+  background: #ffe066;
+  color: #333;
+}
+
+/* section */
+label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+  display: block;
+}
+select {
+  width: 250px;
+  padding: 10px;
+  font-size: 16px;
+  border: 4px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+select:hover,
+select:focus {
+  border-color: #1db954;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+.middle {
+  margin-top: 20px;
+}
