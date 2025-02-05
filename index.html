@@ -58,7 +58,9 @@
       <button onclick="showModal('Наші пісні: список пісень тут')">
         <span data-key="our_songs">Наші пісні</span>
       </button>
-      <button onclick="window.location.href='login.html'">Профіль</button>
+      <button onclick="window.location.href='login.html'" data-key="profile">
+        Профіль
+      </button>
       <button onclick="showModal('Техпідтримка: ubijcklub@gmail.com')">
         <span data-key="support">Техпідтримка</span>
       </button>
@@ -150,6 +152,148 @@
         <option value="fi">Фінляндія (FI)</option>
         <option value="gr">Греція (GR)</option>
       </select>
+    </section>
+
+    <section class="concerts_list">
+      <h1 style="color: #fff; font-size: 40px">Список концертів</h1>
+      <br />
+      <hr />
+      <div class="container">
+        <!-- 1 карточка -->
+        <div class="concert-card">
+          <div class="card-header">
+            <h2 class="city">Klaipėда, Литва</h2>
+            <div class="date-badge">
+              <span class="day">04</span>
+              <span class="month">Квітня</span>
+              <span class="year">2025</span>
+            </div>
+          </div>
+
+          <div class="card-content">
+            <div class="info-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <span class="label">Початок</span>
+                <span class="value">19:00</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <span class="label">Місце проведення</span>
+                <span class="value">Renginiu kombinatas d29b.lt</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fa-solid fa-house"></i>
+              <div>
+                <span class="label">Адрес</span>
+                <span class="value">Dubysos gatvė 29b</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <a href="#" class="more-btn">
+              Дізнатися більше
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2 карточка -->
+        <div class="concert-card">
+          <div class="card-header">
+            <h2 class="city">Лиепая, Латвия</h2>
+            <div class="date-badge">
+              <span class="day">05</span>
+              <span class="month">Квітня</span>
+              <span class="year">2025</span>
+            </div>
+          </div>
+
+          <div class="card-content">
+            <div class="info-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <span class="label">Початок</span>
+                <span class="value">19:00</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <span class="label">Місце проведення</span>
+                <span class="value">Fontaine Palace</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fa-solid fa-house"></i>
+              <div>
+                <span class="label">Адрес</span>
+                <span class="value">Dzirnavu iela 4</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <a href="#" class="more-btn">
+              Дізнатися більше
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3 карточка -->
+        <div class="concert-card">
+          <div class="card-header">
+            <h2 class="city">Биалисток, Польша</h2>
+            <div class="date-badge">
+              <span class="day">07</span>
+              <span class="month">Квітня</span>
+              <span class="year">2025</span>
+            </div>
+          </div>
+
+          <div class="card-content">
+            <div class="info-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <span class="label">Початок</span>
+                <span class="value">19:00</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <span class="label">Місце проведення</span>
+                <span class="value">6-scian. Pub</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="fa-solid fa-house"></i>
+              <div>
+                <span class="label">Адрес</span>
+                <span class="value">Warszawska 34</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <a href="#" class="more-btn">
+              Дізнатися більше
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <script src="locales_changer.js"></script>

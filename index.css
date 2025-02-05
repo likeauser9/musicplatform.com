@@ -265,6 +265,36 @@ select:focus {
   margin-top: 20px;
 }
 
+.concerts_list {
+  background: #1a1a1a;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.card {
+  width: 500px;
+  background: #f9f9f9;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #333;
+  border: 4px dashed red;
+}
+
+.concert_info1 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 25px;
+  margin: 5px 0;
+}
+
 @media (max-width: 800px) {
   .menu button {
     font-size: 14px;
@@ -332,9 +362,126 @@ select:focus {
     left: 0;
   }
 
-  @media (max-width: 432px) {
-    header {
+  @media (max-width: 650px) {
+    .container {
       flex-direction: column;
     }
   }
+}
+
+/* .concerts_list {
+  padding: 40px 20px;
+  background: #1a1a1a;
+} */
+
+.concerts_list h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.concert-card {
+  background: #2a2a2a;
+  border-radius: 15px;
+  padding: 25px;
+  max-width: 700px;
+  margin: 20px auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+/* .concert-card:hover {
+  transform: translateY(-5px);
+} */
+
+.card-header {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #404040;
+  padding-bottom: 20px;
+}
+
+.city {
+  color: #fff;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.date-badge {
+  background: #404040;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.date-badge span {
+  display: block;
+  color: #fff;
+}
+
+.date-badge .day {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.date-badge .month {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.date-badge .year {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.card-content {
+  margin-bottom: 25px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.info-item i {
+  font-size: 1.2rem;
+  margin-right: 15px;
+  color: #ff4757;
+}
+
+.info-item .label {
+  display: block;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.info-item .value {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.more-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 25px;
+  background: #ff4757;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.more-btn:hover {
+  background: #ff6b81;
+}
+
+.more-btn i {
+  margin-left: 10px;
+  font-size: 0.9rem;
 }
