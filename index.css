@@ -310,10 +310,6 @@ select:focus {
     transition: all 0.25s ease-in-out;
   }
 
-  .logo {
-    font-size: 15px;
-  }
-
   /* .nav_menu {
     position: fixed;
     left: -100%;
@@ -334,5 +330,11 @@ select:focus {
 
   .nav_menu.active {
     left: 0;
+  }
+
+  @media (max-width: 432px) {
+    header {
+      flex-direction: column;
+    }
   }
 }
