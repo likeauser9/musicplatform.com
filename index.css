@@ -377,6 +377,21 @@ select:focus {
     justify-content: center;
     align-items: center;
   }
+
+  .back-btn {
+    width: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .back-btn p {
+    display: none;
+  }
+
+  .back-btn i {
+    margin-right: 0;
+  }
 }
 
 /* .concerts_list {
@@ -578,6 +593,26 @@ select:focus {
   font-size: 0.9rem;
 }
 
+.tickets-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 25px;
+  background: #ff4757;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.tickets-btn:hover {
+  background: #ff6b81;
+}
+
+.tickets-btn i {
+  margin-right: 10px;
+  font-size: 0.9rem;
+}
+
 /* shop */
 .shop {
   margin-top: 20px;
@@ -630,6 +665,14 @@ select:focus {
 } */
 
 /* shop general */
+.shop-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
 .shop-card-container {
   position: relative;
   width: 400px;
@@ -642,6 +685,7 @@ select:focus {
 
 .shop-img {
   width: 100%;
+  height: 100%;
   /* height: 200px; */
   object-fit: cover;
 }
@@ -677,6 +721,14 @@ select:focus {
   background: #1a1a1a;
   margin-top: 20px;
   padding: 20px;
+}
+
+.releases-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .releases-card-container {
@@ -729,6 +781,9 @@ select:focus {
 
 .songs-wrapper {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
 }
 
