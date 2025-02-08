@@ -451,6 +451,10 @@ select:focus {
   transform: rotateY(180deg);
 }
 
+.concert-card-back-footer {
+  margin: 15px 0;
+}
+
 .concert-card-container.flipped .concert-card {
   transform: rotateY(180deg);
 }
