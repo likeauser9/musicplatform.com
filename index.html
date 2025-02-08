@@ -11,192 +11,287 @@
     />
   </head>
   <body>
-    <header>
-      <div class="logo-container">
-        <img src="/assets/img/logo.jpg" alt="" class="img-logo" />
-        <a href="#" class="logo">Assassination Squad</a>
+    <div class="wrapper">
+      <header>
+        <div class="logo-container">
+          <img src="/assets/img/logo.jpg" alt="" class="img-logo" />
+          <a href="#" class="logo">Assassination Squad</a>
+        </div>
+
+        <a href="#" class="header_button" data-key="buy_tickets"
+          >Купити квитки</a
+        >
+      </header>
+      <nav>
+        <ul class="nav_menu" id="menu_list">
+          <li>
+            <a class="dedicated_button" href="#" data-key="home">Головна</a>
+          </li>
+          <li><a href="#" data-key="tickets">Квитки</a></li>
+          <li><a href="#" data-key="releases">Релізи</a></li>
+          <li><a href="#" data-key="info">Інформація</a></li>
+          <li><a href="#" data-key="our_songs">Наші пісні</a></li>
+        </ul>
+
+        <div class="hamburger" onclick="toggle_menu()">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </nav>
+      <!-- Лого -->
+      <!-- <img src="7297B429-66D2-4D3C-9465-189CDACE3D00.png" alt="Logo" class="logo"> -->
+
+      <!-- Меню -->
+      <div class="menu">
+        <button onclick="alert('Дата концертів буде додано пізніше')">
+          <img src="assets/icons/time.svg" alt="" />
+          <span data-key="concerts_date">Дата концертів</span>
+        </button>
+        <button onclick="showModal('Магазин скоро відкриється')" , data-key="">
+          <img src="assets/icons/shop.svg" alt="" />
+          <span data-key="shop">Магазин</span>
+        </button>
+        <button onclick="showModal('Перелік релізів буде оновлено')">
+          <img src="assets/icons/song.svg" alt="" />
+          <span data-key="releases">Релізи</span>
+        </button>
+        <button onclick="showModal('Контакти: ubijcklub ubijcklub@gemail.com')">
+          <span data-key="contacts">Контакти</span>
+        </button>
+        <button onclick="showModal('Наші пісні: список пісень тут')">
+          <span data-key="our_songs">Наші пісні</span>
+        </button>
+        <button onclick="window.location.href='login.html'" data-key="profile">
+          Профіль
+        </button>
+        <button onclick="showModal('Техпідтримка: ubijcklub@gmail.com')">
+          <span data-key="support">Техпідтримка</span>
+        </button>
+        <button onclick="showModal('Купівля квитків буде доступна незабаром')">
+          <span data-key="buy_tickets">Купити квитки</span>
+        </button>
+        <button onclick="showModal('Додаток поки не доступний')">
+          <span data-key="app">Додаток</span>
+        </button>
+        <button onclick="showInfo()">
+          <span data-key="info">Інформація</span>
+        </button>
       </div>
 
-      <a href="#" class="header_button" data-key="buy_tickets">Купити квитки</a>
-    </header>
-    <nav>
-      <ul class="nav_menu" id="menu_list">
-        <li>
-          <a class="dedicated_button" href="#" data-key="home">Головна</a>
-        </li>
-        <li><a href="#" data-key="tickets">Квитки</a></li>
-        <li><a href="#" data-key="releases">Релізи</a></li>
-        <li><a href="#" data-key="info">Інформація</a></li>
-        <li><a href="#" data-key="our_songs">Наші пісні</a></li>
-      </ul>
-
-      <div class="hamburger" onclick="toggle_menu()">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+      <div id="mobileMenu" class="mobile-menu">
+        <button onclick="showModal('Дата концертів буде додано пізніше')">
+          Дата концертів
+        </button>
+        <button onclick="showModal('Магазин скоро відкриється')">
+          Магазин
+        </button>
+        <button onclick="showModal('Перелік релізів буде оновлено')">
+          Релізи
+        </button>
+        <button onclick="showModal('Контакти: ubijcklub ubijcklub@gemail.com')">
+          Контакти
+        </button>
       </div>
 
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </nav>
-    <!-- Лого -->
-    <!-- <img src="7297B429-66D2-4D3C-9465-189CDACE3D00.png" alt="Logo" class="logo"> -->
-
-    <!-- Меню -->
-    <div class="menu">
-      <button onclick="alert('Дата концертів буде додано пізніше')">
-        <img src="assets/icons/time.svg" alt="" />
-        <span data-key="concerts_date">Дата концертів</span>
-      </button>
-      <button onclick="showModal('Магазин скоро відкриється')" , data-key="">
-        <img src="assets/icons/shop.svg" alt="" />
-        <span data-key="shop">Магазин</span>
-      </button>
-      <button onclick="showModal('Перелік релізів буде оновлено')">
-        <img src="assets/icons/song.svg" alt="" />
-        <span data-key="releases">Релізи</span>
-      </button>
-      <button onclick="showModal('Контакти: ubijcklub ubijcklub@gemail.com')">
-        <span data-key="contacts">Контакти</span>
-      </button>
-      <button onclick="showModal('Наші пісні: список пісень тут')">
-        <span data-key="our_songs">Наші пісні</span>
-      </button>
-      <button onclick="window.location.href='login.html'" data-key="profile">
-        Профіль
-      </button>
-      <button onclick="showModal('Техпідтримка: ubijcklub@gmail.com')">
-        <span data-key="support">Техпідтримка</span>
-      </button>
-      <button onclick="showModal('Купівля квитків буде доступна незабаром')">
-        <span data-key="buy_tickets">Купити квитки</span>
-      </button>
-      <button onclick="showModal('Додаток поки не доступний')">
-        <span data-key="app">Додаток</span>
-      </button>
-      <button onclick="showInfo()">
-        <span data-key="info">Інформація</span>
-      </button>
-    </div>
-
-    <div id="mobileMenu" class="mobile-menu">
-      <button onclick="showModal('Дата концертів буде додано пізніше')">
-        Дата концертів
-      </button>
-      <button onclick="showModal('Магазин скоро відкриється')">Магазин</button>
-      <button onclick="showModal('Перелік релізів буде оновлено')">
-        Релізи
-      </button>
-      <button onclick="showModal('Контакти: ubijcklub ubijcklub@gemail.com')">
-        Контакти
-      </button>
-    </div>
-
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <p id="modalText"></p>
-        <span class="close-modal" onclick="closeModal()">Закрити</span>
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <p id="modalText"></p>
+          <span class="close-modal" onclick="closeModal()">Закрити</span>
+        </div>
       </div>
-    </div>
 
-    <div id="info" class="info">
-      <h3>Інформація про нас</h3>
-      <p>
-        Це музична платформа, на якій ви можете знайти наші пісні, інформацію
-        про концерти та новини з світу музики!
-      </p>
-      <p>
-        Ми працюємо над створенням нових релізів, а також забезпечуємо своїм
-        фанатам найкращий досвід.
-      </p>
-    </div>
+      <div id="info" class="info">
+        <h3>Інформація про нас</h3>
+        <p>
+          Це музична платформа, на якій ви можете знайти наші пісні, інформацію
+          про концерти та новини з світу музики!
+        </p>
+        <p>
+          Ми працюємо над створенням нових релізів, а також забезпечуємо своїм
+          фанатам найкращий досвід.
+        </p>
+      </div>
 
-    <section class="middle">
-      <label for="language">Оберіть мову:</label>
-      <select id="language">
-        <option value="ua">Українська (UA)</option>
-        <option value="en">Англійська (English, en)</option>
-        <option value="ru">Російська (Русский, ru)</option>
-        <option value="fr">Французька (Français, fr)</option>
-        <option value="de">Німецька (Deutsch, de)</option>
-        <option value="pl">Польська (Polski, pl)</option>
-        <option value="ro">Молдовська / Румунська (Română, ro)</option>
-        <option value="pt">Португальська (Português, pt)</option>
-        <option value="tr">Турецька (Türkçe, tr)</option>
-        <option value="ja">Японська (日本語, ja)</option>
-        <option value="ko">Корейська (한국어, ko)</option>
-        <option value="ar">Арабська (العربية, ar)</option>
-        <option value="hi">Гінді (हिन्दी, hi)</option>
-        <option value="sv">Шведська (Svenska, sv)</option>
-        <option value="no">Норвезька (Norsk, no)</option>
-        <option value="fi">Фінська (Suomi, fi)</option>
-        <option value="el">Грецька (Ελληνικά, el)</option>
-      </select>
+      <section class="middle">
+        <label for="language">Оберіть мову:</label>
+        <select id="language">
+          <option value="ua">Українська (UA)</option>
+          <option value="en">Англійська (English, en)</option>
+          <option value="ru">Російська (Русский, ru)</option>
+          <option value="fr">Французька (Français, fr)</option>
+          <option value="de">Німецька (Deutsch, de)</option>
+          <option value="pl">Польська (Polski, pl)</option>
+          <option value="ro">Молдовська / Румунська (Română, ro)</option>
+          <option value="pt">Португальська (Português, pt)</option>
+          <option value="tr">Турецька (Türkçe, tr)</option>
+          <option value="ja">Японська (日本語, ja)</option>
+          <option value="ko">Корейська (한국어, ko)</option>
+          <option value="ar">Арабська (العربية, ar)</option>
+          <option value="hi">Гінді (हिन्दी, hi)</option>
+          <option value="sv">Шведська (Svenska, sv)</option>
+          <option value="no">Норвезька (Norsk, no)</option>
+          <option value="fi">Фінська (Suomi, fi)</option>
+          <option value="el">Грецька (Ελληνικά, el)</option>
+        </select>
 
-      <br /><br />
+        <br /><br />
 
-      <label for="country">Оберіть країну:</label>
-      <select id="country">
-        <option value="ua">Україна (UA)</option>
-        <option value="us">США (US)</option>
-        <option value="de">Німеччина (DE)</option>
-        <option value="fr">Франція (FR)</option>
-        <option value="gb">Велика Британія (GB)</option>
-        <option value="pl">Польща (PL)</option>
-        <option value="md">Молдова (MD)</option>
-        <option value="ru">Росія (RU)</option>
-        <option value="pt">Португалія (PT)</option>
-        <option value="tr">Туреччина (TR)</option>
-        <option value="jp">Японія (JP)</option>
-        <option value="kr">Південна Корея (KR)</option>
-        <option value="ae">ОАЕ (AE)</option>
-        <option value="in">Індія (IN)</option>
-        <option value="se">Швеція (SE)</option>
-        <option value="no">Норвегія (NO)</option>
-        <option value="fi">Фінляндія (FI)</option>
-        <option value="gr">Греція (GR)</option>
-      </select>
-    </section>
+        <label for="country">Оберіть країну:</label>
+        <select id="country">
+          <option value="ua">Україна (UA)</option>
+          <option value="us">США (US)</option>
+          <option value="de">Німеччина (DE)</option>
+          <option value="fr">Франція (FR)</option>
+          <option value="gb">Велика Британія (GB)</option>
+          <option value="pl">Польща (PL)</option>
+          <option value="md">Молдова (MD)</option>
+          <option value="ru">Росія (RU)</option>
+          <option value="pt">Португалія (PT)</option>
+          <option value="tr">Туреччина (TR)</option>
+          <option value="jp">Японія (JP)</option>
+          <option value="kr">Південна Корея (KR)</option>
+          <option value="ae">ОАЕ (AE)</option>
+          <option value="in">Індія (IN)</option>
+          <option value="se">Швеція (SE)</option>
+          <option value="no">Норвегія (NO)</option>
+          <option value="fi">Фінляндія (FI)</option>
+          <option value="gr">Греція (GR)</option>
+        </select>
+      </section>
 
-    <section class="concerts_list">
-      <h1 style="color: #fff; font-size: 40px">Список концертів</h1>
-      <br />
-      <hr />
-      <div class="container">
-        <!-- 1 карточка -->
-        <div class="concert-card-container">
-          <div class="concert-card">
-            <div class="concert-card-front">
-              <div class="card-header">
-                <h2 class="city">Klaipėда, Литва</h2>
-                <div class="date-badge">
-                  <span class="day">04</span>
-                  <span class="month">Квітня</span>
-                  <span class="year">2025</span>
+      <section class="concerts_list">
+        <h1 style="color: #fff; font-size: 40px">Список концертів</h1>
+        <br />
+        <hr />
+        <div class="container">
+          <!-- 1 карточка -->
+          <div class="concert-card-container">
+            <div class="concert-card">
+              <div class="concert-card-front">
+                <div class="card-header">
+                  <h2 class="city">Klaipėда, Литва</h2>
+                  <div class="date-badge">
+                    <span class="day">04</span>
+                    <span class="month">Квітня</span>
+                    <span class="year">2025</span>
+                  </div>
+                </div>
+
+                <div class="card-content">
+                  <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                      <span class="label">Початок</span>
+                      <span class="value">19:00</span>
+                    </div>
+                  </div>
+
+                  <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                      <span class="label">Місце проведення</span>
+                      <span class="value">Renginiu kombinatas d29b.lt</span>
+                    </div>
+                  </div>
+
+                  <div class="info-item">
+                    <i class="fa-solid fa-house"></i>
+                    <div>
+                      <span class="label">Адрес</span>
+                      <span class="value">Dubysos gatvė 29b</span>
+                    </div>
+                  </div>
+
+                  <div class="card-footer">
+                    <a href="#" class="more-btn">
+                      Дізнатися більше
+                      <i class="fas fa-arrow-right"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
 
-              <div class="card-content">
-                <div class="info-item">
-                  <i class="fas fa-clock"></i>
-                  <div>
-                    <span class="label">Початок</span>
-                    <span class="value">19:00</span>
+              <div class="concert-card-back">
+                <div class="card-header">
+                  <h2 class="city">Ціни</h2>
+                </div>
+
+                <div class="card-content">
+                  <div class="info-item-tickets">
+                    <div>
+                      <span class="label-tickets">Звичайний квиток</span>
+                      <span class="value-tickets">20,00 EUR</span>
+                    </div>
+                  </div>
+
+                  <div class="info-item-tickets">
+                    <div>
+                      <span class="label-tickets">VIP квиток</span>
+                      <span class="value-tickets">40,00 EUR</span>
+                    </div>
+                  </div>
+
+                  <div class="info-item-tickets">
+                    <div>
+                      <span class="label-tickets">Фанатський квиток</span>
+                      <span class="value-tickets">60,00 EUR</span>
+                    </div>
                   </div>
                 </div>
 
-                <div class="info-item">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <div>
-                    <span class="label">Місце проведення</span>
-                    <span class="value">Renginiu kombinatas d29b.lt</span>
+                <div class="concert-card-back-footer">
+                  <a href="#" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    <p>Назад</p>
+                  </a>
+                  <a href="tickets.html" class="tickets-btn">
+                    <i class="fa-solid fa-ticket"></i>
+                    <p>Купити квиток</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2 карточка -->
+          <div class="concert-card-container">
+            <div class="concert-card">
+              <div class="concert-card-front">
+                <div class="card-header">
+                  <h2 class="city">Лиепая, Латвия</h2>
+                  <div class="date-badge">
+                    <span class="day">05</span>
+                    <span class="month">Квітня</span>
+                    <span class="year">2025</span>
                   </div>
                 </div>
 
-                <div class="info-item">
-                  <i class="fa-solid fa-house"></i>
-                  <div>
-                    <span class="label">Адрес</span>
-                    <span class="value">Dubysos gatvė 29b</span>
+                <div class="card-content">
+                  <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                      <span class="label">Початок</span>
+                      <span class="value">19:00</span>
+                    </div>
+                  </div>
+
+                  <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                      <span class="label">Місце проведення</span>
+                      <span class="value">Fontaine Palace</span>
+                    </div>
+                  </div>
+
+                  <div class="info-item">
+                    <i class="fa-solid fa-house"></i>
+                    <div>
+                      <span class="label">Адрес</span>
+                      <span class="value">Dzirnavu iela 4</span>
+                    </div>
                   </div>
                 </div>
 
@@ -207,402 +302,313 @@
                   </a>
                 </div>
               </div>
-            </div>
 
-            <div class="concert-card-back">
-              <div class="card-header">
-                <h2 class="city">Ціни</h2>
-              </div>
+              <div class="concert-card-back">
+                <div class="card-header">
+                  <h2 class="city">Ціни</h2>
+                </div>
 
-              <div class="card-content">
-                <div class="info-item-tickets">
-                  <div>
-                    <span class="label-tickets">Звичайний квиток</span>
-                    <span class="value-tickets">20,00 EUR</span>
+                <div class="card-content">
+                  <div class="info-item-tickets">
+                    <div>
+                      <span class="label-tickets">Звичайний квиток</span>
+                      <span class="value-tickets">20,00 EUR</span>
+                    </div>
+                  </div>
+
+                  <div class="info-item-tickets">
+                    <div>
+                      <span class="label-tickets">VIP квиток</span>
+                      <span class="value-tickets">40,00 EUR</span>
+                    </div>
+                  </div>
+
+                  <div class="info-item-tickets">
+                    <div>
+                      <span class="label-tickets">Фанатський квиток</span>
+                      <span class="value-tickets">60,00 EUR</span>
+                    </div>
                   </div>
                 </div>
 
-                <div class="info-item-tickets">
-                  <div>
-                    <span class="label-tickets">VIP квиток</span>
-                    <span class="value-tickets">40,00 EUR</span>
-                  </div>
+                <div class="card-footer">
+                  <a href="#" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    <p>Назад</p>
+                  </a>
+                  <a href="tickets.html" class="tickets-btn">
+                    <i class="fa-solid fa-ticket"></i>
+                    <p>Купити квиток</p>
+                  </a>
                 </div>
-
-                <div class="info-item-tickets">
-                  <div>
-                    <span class="label-tickets">Фанатський квиток</span>
-                    <span class="value-tickets">60,00 EUR</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="concert-card-back-footer">
-                <a href="#" class="back-btn">
-                  <i class="fas fa-arrow-left"></i>
-                  <p>Назад</p>
-                </a>
-                <a href="#" class="tickets-btn">
-                  <i class="fa-solid fa-ticket"></i>
-                  <p>Купити квиток</p>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2 карточка -->
-        <div class="concert-card-container">
-          <div class="concert-card">
-            <div class="concert-card-front">
-              <div class="card-header">
-                <h2 class="city">Лиепая, Латвия</h2>
-                <div class="date-badge">
-                  <span class="day">05</span>
-                  <span class="month">Квітня</span>
-                  <span class="year">2025</span>
-                </div>
-              </div>
-
-              <div class="card-content">
-                <div class="info-item">
-                  <i class="fas fa-clock"></i>
-                  <div>
-                    <span class="label">Початок</span>
-                    <span class="value">19:00</span>
-                  </div>
-                </div>
-
-                <div class="info-item">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <div>
-                    <span class="label">Місце проведення</span>
-                    <span class="value">Fontaine Palace</span>
-                  </div>
-                </div>
-
-                <div class="info-item">
-                  <i class="fa-solid fa-house"></i>
-                  <div>
-                    <span class="label">Адрес</span>
-                    <span class="value">Dzirnavu iela 4</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-footer">
-                <a href="#" class="more-btn">
-                  Дізнатися більше
-                  <i class="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-
-            <div class="concert-card-back">
-              <div class="card-header">
-                <h2 class="city">Ціни</h2>
-              </div>
-
-              <div class="card-content">
-                <div class="info-item-tickets">
-                  <div>
-                    <span class="label-tickets">Звичайний квиток</span>
-                    <span class="value-tickets">20,00 EUR</span>
-                  </div>
-                </div>
-
-                <div class="info-item-tickets">
-                  <div>
-                    <span class="label-tickets">VIP квиток</span>
-                    <span class="value-tickets">40,00 EUR</span>
-                  </div>
-                </div>
-
-                <div class="info-item-tickets">
-                  <div>
-                    <span class="label-tickets">Фанатський квиток</span>
-                    <span class="value-tickets">60,00 EUR</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-footer">
-                <a href="#" class="back-btn">
-                  <i class="fas fa-arrow-left"></i>
-                  <p>Назад</p>
-                </a>
-                <a href="#" class="tickets-btn">
-                  <i class="fa-solid fa-ticket"></i>
-                  <p>Купити квиток</p>
-                </a>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- 3 карточка -->
-        <div class="concert-card-container">
-          <div class="concert-card">
-            <div class="concert-card-front">
-              <div class="card-header">
-                <h2 class="city">Биалисток, Польша</h2>
-                <div class="date-badge">
-                  <span class="day">07</span>
-                  <span class="month">Квітня</span>
-                  <span class="year">2025</span>
+          <!-- 3 карточка -->
+          <div class="concert-card-container">
+            <div class="concert-card">
+              <div class="concert-card-front">
+                <div class="card-header">
+                  <h2 class="city">Биалисток, Польша</h2>
+                  <div class="date-badge">
+                    <span class="day">07</span>
+                    <span class="month">Квітня</span>
+                    <span class="year">2025</span>
+                  </div>
+                </div>
+
+                <div class="card-content">
+                  <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                      <span class="label">Початок</span>
+                      <span class="value">19:00</span>
+                    </div>
+                  </div>
+
+                  <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                      <span class="label">Місце проведення</span>
+                      <span class="value">6-scian. Pub</span>
+                    </div>
+                  </div>
+
+                  <div class="info-item">
+                    <i class="fa-solid fa-house"></i>
+                    <div>
+                      <span class="label">Адрес</span>
+                      <span class="value">Warszawska 34</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-footer">
+                  <a href="#" class="more-btn">
+                    Дізнатися більше
+                    <i class="fas fa-arrow-right"></i>
+                  </a>
                 </div>
               </div>
 
-              <div class="card-content">
-                <div class="info-item">
-                  <i class="fas fa-clock"></i>
-                  <div>
-                    <span class="label">Початок</span>
-                    <span class="value">19:00</span>
+              <div class="concert-card-back">
+                <div class="card-header">
+                  <h2 class="city">Ціни</h2>
+                </div>
+
+                <div class="card-content">
+                  <div class="info-item-tickets">
+                    <div>
+                      <span class="label-tickets">Звичайний квиток</span>
+                      <span class="value-tickets">20,00 EUR</span>
+                    </div>
+                  </div>
+
+                  <div class="info-item-tickets">
+                    <div>
+                      <span class="label-tickets">VIP квиток</span>
+                      <span class="value-tickets">40,00 EUR</span>
+                    </div>
+                  </div>
+
+                  <div class="info-item-tickets">
+                    <div>
+                      <span class="label-tickets">Фанатський квиток</span>
+                      <span class="value-tickets">60,00 EUR</span>
+                    </div>
                   </div>
                 </div>
 
-                <div class="info-item">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <div>
-                    <span class="label">Місце проведення</span>
-                    <span class="value">6-scian. Pub</span>
-                  </div>
+                <div class="card-footer">
+                  <a href="#" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    <p>Назад</p>
+                  </a>
+                  <a href="tickets.html" class="tickets-btn">
+                    <i class="fa-solid fa-ticket"></i>
+                    <p>Купити квиток</p>
+                  </a>
                 </div>
-
-                <div class="info-item">
-                  <i class="fa-solid fa-house"></i>
-                  <div>
-                    <span class="label">Адрес</span>
-                    <span class="value">Warszawska 34</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-footer">
-                <a href="#" class="more-btn">
-                  Дізнатися більше
-                  <i class="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-
-            <div class="concert-card-back">
-              <div class="card-header">
-                <h2 class="city">Ціни</h2>
-              </div>
-
-              <div class="card-content">
-                <div class="info-item-tickets">
-                  <div>
-                    <span class="label-tickets">Звичайний квиток</span>
-                    <span class="value-tickets">20,00 EUR</span>
-                  </div>
-                </div>
-
-                <div class="info-item-tickets">
-                  <div>
-                    <span class="label-tickets">VIP квиток</span>
-                    <span class="value-tickets">40,00 EUR</span>
-                  </div>
-                </div>
-
-                <div class="info-item-tickets">
-                  <div>
-                    <span class="label-tickets">Фанатський квиток</span>
-                    <span class="value-tickets">60,00 EUR</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-footer">
-                <a href="#" class="back-btn">
-                  <i class="fas fa-arrow-left"></i>
-                  <p>Назад</p>
-                </a>
-                <a href="#" class="tickets-btn">
-                  <i class="fa-solid fa-ticket"></i>
-                  <p>Купити квиток</p>
-                </a>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="shop">
-      <h1 style="color: #fff; font-size: 40px">Магазин</h1>
-      <br />
-      <hr />
-      <div class="shop-wrapper">
-        <div class="shop-card-container">
-          <img src="/assets/img/guitar.jpg" alt="" class="shop-img" />
-          <div class="shop-info-container">
-            <p class="shop-product-name">Название товара</p>
-            <p class="shop-product-price">$29.99</p>
-            <a href="#" class="more-btn">
-              Купити
-              <i class="fa-solid fa-cart-shopping"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- <div class="all-cards-container">
-        <div class="card-container">
-          <div class="shop-card">
-            <div class="card-front">
-              <p>front card</p>
-            </div>
-            <div class="card-back">
-              <p>back card</p>
+      <section class="shop">
+        <h1 style="color: #fff; font-size: 40px">Магазин</h1>
+        <br />
+        <hr />
+        <div class="shop-wrapper">
+          <div class="shop-card-container">
+            <img src="/assets/img/guitar.jpg" alt="" class="shop-img" />
+            <div class="shop-info-container">
+              <p class="shop-product-name">Название товара</p>
+              <p class="shop-product-price">$29.99</p>
+              <a href="#" class="more-btn">
+                Купити
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
             </div>
           </div>
         </div>
-      </div> -->
-    </section>
-
-    <section class="releases">
-      <h1 style="color: #fff; font-size: 40px">Релізи</h1>
-      <br />
-      <hr />
-      <div class="releases-wrapper">
-        <div class="releases-card-container">
-          <img
-            src="/assets/img/album_img.jpg"
-            alt="album"
-            class="releases-img"
-          />
-          <div class="releases-info">
-            <p class="releases-name">Перший альбом</p>
-            <p class="releases-date">31.02.2025</p>
-            <a href="#" class="more-btn">
-              Слухати пісні
-              <i class="fa-solid fa-headphones"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="songs">
-      <h1 style="color: #fff; font-size: 40px">Наші пісні</h1>
-      <br />
-      <hr />
-      <div class="songs-wrapper">
-        <div class="songs-container">
-          <h1 class="songs-album-title">Перший альбом</h1>
-          <div class="songs-card">
-            <img src="https://placehold.co/50x50" alt="" class="songs-img" />
-            <div class="songs-title">
-              <p>Перша пісня</p>
-              <p>3:00</p>
+        <!-- <div class="all-cards-container">
+          <div class="card-container">
+            <div class="shop-card">
+              <div class="card-front">
+                <p>front card</p>
+              </div>
+              <div class="card-back">
+                <p>back card</p>
+              </div>
             </div>
-            <div class="songs-duration">
-              <i class="fa-solid fa-circle-play"></i>
+          </div>
+        </div> -->
+      </section>
+
+      <section class="releases">
+        <h1 style="color: #fff; font-size: 40px">Релізи</h1>
+        <br />
+        <hr />
+        <div class="releases-wrapper">
+          <div class="releases-card-container">
+            <img
+              src="/assets/img/album_img.jpg"
+              alt="album"
+              class="releases-img"
+            />
+            <div class="releases-info">
+              <p class="releases-name">Перший альбом</p>
+              <p class="releases-date">31.02.2025</p>
+              <a href="#" class="more-btn">
+                Слухати пісні
+                <i class="fa-solid fa-headphones"></i>
+              </a>
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="songs-container">
-          <h1 class="songs-album-title">Другий альбом</h1>
-          <div class="songs-card">
-            <img src="https://placehold.co/50x50" alt="" class="songs-img" />
-            <div class="songs-title">
-              <p>Друга пісня</p>
-              <p>2:00</p>
+      <section class="songs">
+        <h1 style="color: #fff; font-size: 40px">Наші пісні</h1>
+        <br />
+        <hr />
+        <div class="songs-wrapper">
+          <div class="songs-container">
+            <h1 class="songs-album-title">Перший альбом</h1>
+            <div class="songs-card">
+              <img src="https://placehold.co/50x50" alt="" class="songs-img" />
+              <div class="songs-title">
+                <p>Перша пісня</p>
+                <p>3:00</p>
+              </div>
+              <div class="songs-duration">
+                <i class="fa-solid fa-circle-play"></i>
+              </div>
             </div>
-            <div class="songs-duration">
-              <i class="fa-solid fa-circle-play"></i>
-            </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="tickets">
-      <div class="container">
-        <h1>Купить билеты</h1>
-        <p>Благодарим за поддержку! Выберите билет и способ оплаты.</p>
-
-        <!-- Кнопки входа и регистрации -->
-        <div id="auth-section">
-          <button onclick="showLogin()">Войти</button>
-          <button onclick="showRegister()">Регистрация</button>
-        </div>
-
-        <!-- Блок личного кабинета -->
-        <div id="user-profile" style="display: none">
-          <p>Добро пожаловать, <span id="user-name"></span>!</p>
-          <button onclick="logout()">Выйти</button>
-        </div>
-
-        <!-- Таймер до начала продаж -->
-        <div class="countdown">
-          <h2>Билеты поступят в продажу через:</h2>
-          <p id="timer">00:00:00</p>
-        </div>
-
-        <div class="tickets">
-          <div class="ticket">
-            <h3>General Admission</h3>
-            <p>40₽</p>
-            <button onclick="showPaymentOptions(40)">Купить</button>
-          </div>
-          <div class="ticket">
-            <h3>Early Entrance</h3>
-            <p>59₽</p>
-            <button onclick="showPaymentOptions(59)">Купить</button>
-          </div>
-          <div class="ticket">
-            <h3>Golden Circle</h3>
-            <p>55₽</p>
-            <button onclick="showPaymentOptions(55)">Купить</button>
-          </div>
-          <div class="ticket">
-            <h3>Fan Ticket + Poster</h3>
-            <p>85₽</p>
-            <button onclick="showPaymentOptions(85)">Купить</button>
-          </div>
-        </div>
-
-        <!-- Кнопка для перехода на DonationAlerts -->
-        <div class="donation-section">
-          <h2>Хотите поддержать нас?</h2>
-          <a
-            href="https://www.donationalerts.com/r/tenicumerek"
-            target="_blank"
-            class="donate-button"
-            >Пожертвовать через DonationAlerts</a
-          >
-        </div>
-
-        <!-- Отзывы -->
-        <div class="reviews">
-          <h2>Отзывы</h2>
-          <textarea
-            id="review-input"
-            placeholder="Напишите отзыв..."
-            oninput="checkSpam()"
-          ></textarea>
-          <button onclick="submitReview()">Отправить</button>
-          <div id="review-list"></div>
-        </div>
-
-        <!-- Модальное окно для оплаты -->
-        <div id="payment-modal" class="modal">
-          <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Выберите способ оплаты</h2>
-            <button onclick="payWithCrypto()">💎 Toncoin (TON)</button>
-            <div id="crypto-payment" style="display: none">
-              <p>Отсканируйте QR-код, чтобы оплатить:</p>
-              <img src="qr-code.jpg" alt="TON QR Code" width="200" />
+          <div class="songs-container">
+            <h1 class="songs-album-title">Другий альбом</h1>
+            <div class="songs-card">
+              <img src="https://placehold.co/50x50" alt="" class="songs-img" />
+              <div class="songs-title">
+                <p>Друга пісня</p>
+                <p>2:00</p>
+              </div>
+              <div class="songs-duration">
+                <i class="fa-solid fa-circle-play"></i>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section class="tickets">
+        <div class="container">
+          <h1>Купить билеты</h1>
+          <p>Благодарим за поддержку! Выберите билет и способ оплаты.</p>
+
+          <!-- Кнопки входа и регистрации -->
+          <div id="auth-section">
+            <button onclick="showLogin()">Войти</button>
+            <button onclick="showRegister()">Регистрация</button>
+          </div>
+
+          <!-- Блок личного кабинета -->
+          <div id="user-profile" style="display: none">
+            <p>Добро пожаловать, <span id="user-name"></span>!</p>
+            <button onclick="logout()">Выйти</button>
+          </div>
+
+          <!-- Таймер до начала продаж -->
+          <div class="countdown">
+            <h2>Билеты поступят в продажу через:</h2>
+            <p id="timer">00:00:00</p>
+          </div>
+
+          <div class="tickets">
+            <div class="ticket">
+              <h3>General Admission</h3>
+              <p>40₽</p>
+              <button onclick="showPaymentOptions(40)">Купить</button>
+            </div>
+            <div class="ticket">
+              <h3>Early Entrance</h3>
+              <p>59₽</p>
+              <button onclick="showPaymentOptions(59)">Купить</button>
+            </div>
+            <div class="ticket">
+              <h3>Golden Circle</h3>
+              <p>55₽</p>
+              <button onclick="showPaymentOptions(55)">Купить</button>
+            </div>
+            <div class="ticket">
+              <h3>Fan Ticket + Poster</h3>
+              <p>85₽</p>
+              <button onclick="showPaymentOptions(85)">Купить</button>
+            </div>
+          </div>
+
+          <!-- Кнопка для перехода на DonationAlerts -->
+          <div class="donation-section">
+            <h2>Хотите поддержать нас?</h2>
+            <a
+              href="https://www.donationalerts.com/r/tenicumerek"
+              target="_blank"
+              class="donate-button"
+              >Пожертвовать через DonationAlerts</a
+            >
+          </div>
+
+          <!-- Отзывы -->
+          <div class="reviews">
+            <h2>Отзывы</h2>
+            <textarea
+              id="review-input"
+              placeholder="Напишите отзыв..."
+              oninput="checkSpam()"
+            ></textarea>
+            <button onclick="submitReview()">Отправить</button>
+            <div id="review-list"></div>
+          </div>
+
+          <!-- Модальное окно для оплаты -->
+          <div id="payment-modal" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <h2>Выберите способ оплаты</h2>
+              <button onclick="payWithCrypto()">💎 Toncoin (TON)</button>
+              <div id="crypto-payment" style="display: none">
+                <p>Отсканируйте QR-код, чтобы оплатить:</p>
+                <img src="qr-code.jpg" alt="TON QR Code" width="200" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
 
     <script src="locales_changer.js"></script>
     <script src="index.js"></script>
