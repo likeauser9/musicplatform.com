@@ -468,7 +468,11 @@
       <hr />
       <div class="releases-wrapper">
         <div class="releases-card-container">
-          <img src="/assets/img/album_img.jpg" alt="" class="releases-img" />
+          <img
+            src="/assets/img/album_img.jpg"
+            alt="album"
+            class="releases-img"
+          />
           <div class="releases-info">
             <p class="releases-name">Перший альбом</p>
             <p class="releases-date">31.02.2025</p>
@@ -510,6 +514,90 @@
             </div>
             <div class="songs-duration">
               <i class="fa-solid fa-circle-play"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tickets">
+      <div class="container">
+        <h1>Купить билеты</h1>
+        <p>Благодарим за поддержку! Выберите билет и способ оплаты.</p>
+
+        <!-- Кнопки входа и регистрации -->
+        <div id="auth-section">
+          <button onclick="showLogin()">Войти</button>
+          <button onclick="showRegister()">Регистрация</button>
+        </div>
+
+        <!-- Блок личного кабинета -->
+        <div id="user-profile" style="display: none">
+          <p>Добро пожаловать, <span id="user-name"></span>!</p>
+          <button onclick="logout()">Выйти</button>
+        </div>
+
+        <!-- Таймер до начала продаж -->
+        <div class="countdown">
+          <h2>Билеты поступят в продажу через:</h2>
+          <p id="timer">00:00:00</p>
+        </div>
+
+        <div class="tickets">
+          <div class="ticket">
+            <h3>General Admission</h3>
+            <p>40₽</p>
+            <button onclick="showPaymentOptions(40)">Купить</button>
+          </div>
+          <div class="ticket">
+            <h3>Early Entrance</h3>
+            <p>59₽</p>
+            <button onclick="showPaymentOptions(59)">Купить</button>
+          </div>
+          <div class="ticket">
+            <h3>Golden Circle</h3>
+            <p>55₽</p>
+            <button onclick="showPaymentOptions(55)">Купить</button>
+          </div>
+          <div class="ticket">
+            <h3>Fan Ticket + Poster</h3>
+            <p>85₽</p>
+            <button onclick="showPaymentOptions(85)">Купить</button>
+          </div>
+        </div>
+
+        <!-- Кнопка для перехода на DonationAlerts -->
+        <div class="donation-section">
+          <h2>Хотите поддержать нас?</h2>
+          <a
+            href="https://www.donationalerts.com/r/tenicumerek"
+            target="_blank"
+            class="donate-button"
+            >Пожертвовать через DonationAlerts</a
+          >
+        </div>
+
+        <!-- Отзывы -->
+        <div class="reviews">
+          <h2>Отзывы</h2>
+          <textarea
+            id="review-input"
+            placeholder="Напишите отзыв..."
+            oninput="checkSpam()"
+          ></textarea>
+          <button onclick="submitReview()">Отправить</button>
+          <div id="review-list"></div>
+        </div>
+
+        <!-- Модальное окно для оплаты -->
+        <div id="payment-modal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Выберите способ оплаты</h2>
+            <button onclick="payWithCrypto()">💎 Toncoin (TON)</button>
+            <div id="crypto-payment" style="display: none">
+              <p>Отсканируйте QR-код, чтобы оплатить:</p>
+              <img src="qr-code.jpg" alt="TON QR Code" width="200" />
             </div>
           </div>
         </div>

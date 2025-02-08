@@ -1,0 +1,263 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #333; */
+  color: white;
+  padding: 20px 20px;
+}
+
+.nav-left {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.logo {
+  color: black;
+  font-size: 2rem;
+}
+
+.nav-links a {
+  color: #4199df;
+  font-size: 1.2rem;
+  /* border-bottom: 4px solid #4199df; */
+  padding-bottom: 18px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  border-bottom: 4px solid #4199df;
+  padding-bottom: 18px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-right {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+#language {
+  background: transparent;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+#language:hover {
+  cursor: pointer;
+  color: #4199df;
+}
+
+.login-btn {
+  background-color: white;
+  color: #4199df;
+  border: 1px solid #4199df;
+  padding: 7px 15px;
+  border-radius: 8px;
+  /* font-size: 1.1rem; */
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #4199df;
+  color: white;
+}
+
+/* poster */
+.poster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0 0 0;
+  background-image: url("/assets/img/poster_img.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.poster-content {
+  display: flex;
+  /* border: 2px solid red; */
+}
+
+.poster-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.poster-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+}
+
+.poster-right-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 16px 32px 0 32px;
+}
+
+#date-select {
+  /* appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 150px;
+  font-size: 16px;
+  cursor: pointer;
+  background-image: url("/assets/icons/arrow-up.svg");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px; */
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background: white;
+  border: 1px solid #333;
+}
+
+.select-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select-info i {
+  /* font-size: 1.5rem; */
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.select-info i:hover {
+  transform: rotateZ(180deg);
+}
+
+.poster-right-price {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 32px;
+  gap: 20px;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.poster-right-price-btn {
+  background-color: #2ca850;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.poster-right-price-btn a {
+  color: white;
+}
+
+/* events */
+.events {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.events-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.events h1 {
+  margin: 2.25rem 0;
+}
+
+.events-cards {
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.events-card {
+  position: relative;
+  width: 260px;
+  height: 370px;
+}
+
+.events-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(50%);
+  transition: all 0.3s ease;
+}
+
+.events-card-info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  bottom: 0;
+  width: 100%;
+}
+
+.events-card-info-date {
+  color: white;
+  padding: 15px 20px;
+}
+
+.events-card-info-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4199df;
+  padding: 16px 0;
+  border-top: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.events-card-info-price:hover {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: #4199df;
+  color: white;
+  cursor: pointer;
+}
+
+.events-card-info-price:hover p {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+.events-card-info-price:hover ~ img {
+  transform: scale(1.2);
+}
+
+.events-card-info-price:hover ~ .events-card-info .events-location {
+  color: yellow;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 800px) {
+}

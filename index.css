@@ -499,7 +499,7 @@ select:focus {
 }
 
 .card-content {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .info-item {
@@ -812,4 +812,10 @@ select:focus {
 
 .songs-duration i {
   font-size: 30px;
+}
+
+.tickets {
+  background: #1a1a1a;
+  margin-top: 20px;
+  padding: 20px;
 }
